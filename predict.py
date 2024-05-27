@@ -1,5 +1,7 @@
 import os.path
 
+from estimate_price import estimate_price
+
 
 def main():
     mileage = int(input("Please enter the mileage of the car: "))
@@ -9,7 +11,7 @@ def main():
     theta0 = 0
     theta1 = 0
 
-    print("The estimated price of the car is: ", theta0 + theta1 * mileage)
+    print("The estimated price of the car is:", estimate_price(mileage, theta0, theta1))
 
 
 if __name__ == '__main__':
