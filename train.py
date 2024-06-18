@@ -31,7 +31,7 @@ def mean_squared_error(mileage, price, theta0, theta1):
     error_sum = 0
     for i in range(len(mileage)):
         error_sum += (estimate_price(mileage[i], theta0, theta1) - price[i]) ** 2
-    return error_sum / (2 * len(mileage))
+    return error_sum / len(mileage)
 
 
 def gradient_descent(mileage, price, theta0, theta1):
@@ -93,6 +93,7 @@ def main():
 
     plt.subplot(2, 2, 1)
     plt.scatter(mileage, price)
+    plt.xticks([i for i in range(0, 250000, 100000)])
     plt.title("Data Set")
 
     plt.subplot(2, 2, 2)
@@ -105,6 +106,7 @@ def main():
     plt.scatter(mileage_dn, price_dn)
     plt.plot(mileage_dn, [estimate_price(mileage_dn[i], theta0_dn, theta1_dn)
                           for i in range(len(mileage))], color='red')
+    plt.xticks([i for i in range(0, 250000, 100000)])
     plt.title("Denormalized data with linear regression")
 
     plt.subplot(2, 2, 4)
