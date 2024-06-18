@@ -35,7 +35,7 @@ def mean_squared_error(mileage, price, theta0, theta1):
 
 
 def gradient_descent(mileage, price, theta0, theta1):
-    learning_rate = 0.048
+    learning_rate = 0.1
     sum_theta0 = 0
     sum_theta1 = 0
     for i in range(len(mileage)):
@@ -93,18 +93,19 @@ def main():
 
     plt.subplot(2, 2, 1)
     plt.scatter(mileage, price)
+    plt.title("Data Set")
 
     plt.subplot(2, 2, 2)
     plt.scatter(normalized_mileage, normalized_price)
     plt.plot(normalized_mileage, [estimate_price(normalized_mileage[i], theta0, theta1)
                                   for i in range(len(mileage))], color='red')
-    plt.title("Normalized data")
+    plt.title("Normalized data with linear regression")
 
     plt.subplot(2, 2, 3)
     plt.scatter(mileage_dn, price_dn)
     plt.plot(mileage_dn, [estimate_price(mileage_dn[i], theta0_dn, theta1_dn)
                           for i in range(len(mileage))], color='red')
-    plt.title("Denormalized data")
+    plt.title("Denormalized data with linear regression")
 
     plt.subplot(2, 2, 4)
     plt.plot(range(iterations), error)

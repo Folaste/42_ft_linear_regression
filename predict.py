@@ -16,7 +16,7 @@ def main():
         theta0 = 0.0
         theta1 = 0.0
 
-    print("The estimated price of the car is:", int(estimate_price(mileage, theta0, theta1)), "euros.")
+    print("The estimated price of the car is:", round(estimate_price(mileage, theta0, theta1), 2), "euros.")
 
 
 if __name__ == '__main__':
