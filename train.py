@@ -1,4 +1,5 @@
 import os.path
+import sys
 
 from matplotlib import pyplot as plt
 
@@ -55,6 +56,9 @@ def main():
                 data = line.split(",")
                 mileage.append(int(data[0]))
                 price.append(int(data[1]))
+    else:
+        print("The file data.csv does not exist.")
+        exit(1)
 
     # print("mileage", mileage, file=sys.stderr, flush=True)
     # print("price", price, file=sys.stderr, flush=True)
